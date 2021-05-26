@@ -23,7 +23,7 @@ title.textContent = "Welcome"
   // Part 2
 //const varBody = document.getElementsByTagName('body')
 const varBody = document.querySelector('body');
-varBody.style.backgroundColor = 'purple';
+varBody.style.backgroundColor = 'pink';
 
   // Part 3
   var list = document.getElementById("favorite-things");
@@ -32,28 +32,42 @@ varBody.style.backgroundColor = 'purple';
   list.removeChild(list.childNodes[11]);
   console.log(list)
   // Part 4
-const mainTitle = document.querySelector('.main')
-console.log(mainTitle)
-const specialTitle = mainTitle.getElementsByClassName('special-title')
-console.log(specialTitle)
-specialTitle.style.backgroundColor = 'red'
-specialTitle.style.fontSize = '4rem'
+const specialTitle = document.querySelectorAll('.special-title')
+for(let eachitem of specialTitle){
+  eachitem.style.fontSize = '2rem'
+}
 
   // Part 5
-
-
-  // Part 6
-
+const pastraces = document.getElementById('past-races')
+pastraces.removeChild(pastraces.children[3])
+ // Part 6
+const newLi = document.createElement('li')
+newLi.textContent = "Austin"
+pastraces.appendChild(newLi)
 
   // Part 7
+const firstParent = document.querySelector('.main')
+const newBlogPost = document.createElement('div')
+newBlogPost.classList.add('blog-post','purple')
+firstParent.appendChild(newBlogPost)
+const newH1 = document.createElement('h1')
+newH1.textContent = "Austin"
+newBlogPost.appendChild(newH1)
+newP = document.createElement('p')
+newP.textContent='I did Whatever'
+newBlogPost.appendChild(newP)
 
 
   // Part 8
-
+ const quoteTitle = document.getElementById('quote-title')
+ //console.log(quoteTitle)
+ quoteTitle.addEventListener("click", randomQuote)
 
   // Part 9
 
-
-
-
+const blogPostClassElements = document.querySelectorAll(".blog-post")
+for(let each of blogPostClassElements){
+each.addEventListener("mouseenter",() => {each.classList.toggle("red")})
+each.addEventListener("mouseout",() => {each.classList.toggle("purple")})
+}
 });
